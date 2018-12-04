@@ -23,4 +23,10 @@ public class MemberController {
         listUser.add("wangwu");
         return listUser;
     }
+
+    @RequestMapping("/getMemberService")
+    public String getMemberService(){
+        return "this is 会员服务";
+    }
+
 }
