@@ -29,4 +29,10 @@ public class MemberController {
         listUser.add("serverPort:"+serverPort);
         return listUser;
     }
+
+    @RequestMapping("/getMemberService")
+    public String getMemberService(){
+        return "this is 会员服务";
+    }
+
 }

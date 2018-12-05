@@ -22,4 +22,10 @@ public class OrderController {
     public List<String> getOrderUserAll() {
         return orderService.getOrderUser();
     }
+
+    @RequestMapping("/getOrderService")
+    public String getOrderService(){
+        return "this is order服务";
+    }
+
 }
