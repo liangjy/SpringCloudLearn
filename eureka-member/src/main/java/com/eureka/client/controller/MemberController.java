@@ -1,5 +1,6 @@
 package com.eureka.client.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,20 +18,24 @@ import java.util.List;
 public class MemberController {
 
     private static int count = 0;
+    
+    @Value("${server.port}")
+    private String serverPort;
 
     @RequestMapping("/getAllMember")
-    public List<String> getAllMember(){
-        count ++;
+    public List<String> getAllMember() {
+        count++;
         List<String> listUser = new ArrayList<String>();
         listUser.add("zhangsan");
         listUser.add("lisi");
         listUser.add("wangwu");
-        listUser.add("count"+count);
+        listUser.add("count" + count);
+        listUser.add("serverPort:" + serverPort);
         return listUser;
     }
 
     @RequestMapping("/getMemberService")
-    public String getMemberService(){
+    public String getMemberService() {
         return "this is 会员服务";
     }
 
