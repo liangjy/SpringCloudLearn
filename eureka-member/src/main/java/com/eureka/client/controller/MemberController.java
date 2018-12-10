@@ -15,12 +15,17 @@ import java.util.List;
  */
 @RestController
 public class MemberController {
+
+    private static int count = 0;
+
     @RequestMapping("/getAllMember")
     public List<String> getAllMember(){
+        count ++;
         List<String> listUser = new ArrayList<String>();
         listUser.add("zhangsan");
         listUser.add("lisi");
         listUser.add("wangwu");
+        listUser.add("count"+count);
         return listUser;
     }
 
