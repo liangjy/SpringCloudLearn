@@ -18,7 +18,7 @@ import java.util.List;
 public class MemberController {
 
     private static int count = 0;
-    
+
     @Value("${server.port}")
     private String serverPort;
 
